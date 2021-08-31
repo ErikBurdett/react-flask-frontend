@@ -1,6 +1,6 @@
 export default class APIService{
     static UpdateArticle(id, body){
-        return fetch(`/update/${id}/`, {
+        return fetch(`https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/update/${id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type':'application/json'
@@ -10,7 +10,7 @@ export default class APIService{
     }
 
     static InsertedArticle(body){
-        return fetch('/add', {
+        return fetch('https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/add', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -20,7 +20,7 @@ export default class APIService{
     }
 
     static DeleteArticle(id){
-        return fetch(`/delete/${id}/`, {
+        return fetch(`https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/delete/${id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type':'application/json'

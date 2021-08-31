@@ -27,7 +27,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",

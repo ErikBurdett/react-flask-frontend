@@ -6,7 +6,7 @@ export const Details = ({articles})=> {
     const data = articles.route.params.data;
 
     const deleteData = (data)=>{
-        fetch(`/delete/${data.id}/`, {
+        fetch(`https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/delete/${data.id}/`, {
             method: 'DELETE',
             headers: {
                 'content-type':'application/json'
