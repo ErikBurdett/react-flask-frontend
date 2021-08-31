@@ -10,7 +10,7 @@ function Form(props) {
         setTitle(props.article.title)
         setBody(props.article.body)
     }, [props.article])
-    
+
     const updateArticle = ()=> {
         APIService.UpdateArticle(props.article.id, {title, body})
         .then(resp => props.updatedData(resp))

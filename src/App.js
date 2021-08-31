@@ -11,13 +11,13 @@ function App() {
 
   useEffect(()=>{
     fetch('https://flaskreact-native-test.herokuapp.com/get', {
-      'method':'GET',
+      'method' :'GET',
       headers: {
         'Content-Type': 'application/json'}
     }
   )
-  .then(response=>response.json())
-  .then(response =>setArticles(response))
+  .then(resp=>resp.json())
+  .then(resp =>setArticles(resp))
   .catch(error => console.log(error))
 
   }, [])
@@ -29,7 +29,7 @@ function App() {
 
   const updatedData = (article) =>{
     const new_article = articles.map(my_article =>{
-      if(my_article.id == article.id){
+      if(my_article.id === article.id){
         return article
       } else {
         return my_article
@@ -51,7 +51,7 @@ function App() {
     const new_articles = articles.filter(myarticle => {
       if(myarticle.id === article.id){
         return false;
-      } 
+      }
       return true
     })
     setArticles(new_articles)

@@ -12,13 +12,12 @@ function ArticleList(props) {
         .then(()=>props.deleteArticle(article))
     }
     return (
-        <div>
+        <div  data-testid="articles">
+          <h1>Welcome To The Test App</h1>
         {props.articles && props.articles.map(article =>{
           return (
             <div key ={article.id}>
-              <h2>
-                {article.title}
-              </h2>
+              <h2>Test - {article.title}</h2>
               <p>{article.body}</p>
               <p>{article.date}</p>
               <div className="row">
