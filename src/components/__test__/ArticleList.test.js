@@ -51,12 +51,14 @@ const AllArticles =[{
     }]
 
 test("Renders correct Article", ()=> {
-    render(<ArticleList article={testArticle}/>);
+    render(<ArticleList articles={testArticle}/>);
 
 });
 
 test("Renders All Articles", ()=>{
-    render(<ArticleList article={AllArticles}/>)
+    render(<ArticleList articles={AllArticles}/>)
+    const allPresent = screen.getAllByTestId("allPresent")
+    expect(allPresent).toContainElement("h2");
 })
 
 test("renders buttons", ()=>{
@@ -65,3 +67,12 @@ test("renders buttons", ()=>{
     expect(button).toBeTruthy()
 })
 
+test("renders the body", ()=>{
+    render(<ArticleList title={testArticle}/>);
+    const body = screen.queryAllByTestId("articlebody");
+    expect(body).toBeTruthy();
+    console.log(body)
+    // expect(body).toHaveAttribute([]);
+    // expect(body).toBeTruthy();
+    // expect(body).toHaveTextContent("Test Article");
+});

@@ -12,11 +12,11 @@ function ArticleList(props) {
         .then(()=>props.deleteArticle(article))
     }
     return (
-        <div
-        test-dataid="button">
+        <div>
         {props.articles && props.articles.map(article =>{
           return (
             <div
+            
             key ={article.id}>
               <h2>Test - {article.title}</h2>
               <p
@@ -38,7 +38,7 @@ function ArticleList(props) {
                       <button
                       className = "btn btn-danger"
                       onClick={()=> deleteArticle(article)}>
-                        Delete
+                        delete
                       </button>
                   </div>
             </div>
