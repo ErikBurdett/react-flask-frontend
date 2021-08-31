@@ -1,13 +1,18 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ArticleList from '../ArticleList';
-import {render} from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
+import {App} from '../../App'
 import "@testing-library/jest-dom/extend-expect"
 
-test("articles render with correct text", ()=>{
-    const component = render(<ArticleList/>);
-    const articlesElement = component.getByTestId("articles");
-    
+test("Renders correct content", ()=> {
+    render(<ArticleList/>);
 
-    expect(articlesElement.textContent).toBe("Welcome To The Test App")
-    console.log(articlesElement.textContent)
+});
+
+test("renders buttons", ()=>{
+    render(<ArticleList/>);
+    const button = screen.queryAllByTestId("button");
+    expect(button).toBeTruthy()
 })
+

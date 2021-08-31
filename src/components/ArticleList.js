@@ -12,25 +12,33 @@ function ArticleList(props) {
         .then(()=>props.deleteArticle(article))
     }
     return (
-        <div  data-testid="articles">
-          <h1>Welcome To The Test App</h1>
+        <div
+        test-dataid="button">
         {props.articles && props.articles.map(article =>{
           return (
-            <div key ={article.id}>
+            <div
+            key ={article.id}>
               <h2>Test - {article.title}</h2>
-              <p>{article.body}</p>
+              <p
+              >{article.body}</p>
               <p>{article.date}</p>
-              <div className="row">
-                  <div className = "col-md-1">
-                      <button className = "btn btn-primary"
-                      onClick = {()=> editArticle(article)}>
-                        update
+              <div 
+              className="row"
+              >
+                  <div className = "col-md-1"
+                  >
+                      <button
+                      className = "btn btn-primary"
+                      onClick = {()=> editArticle(article)}
+                      >
+                        Update
                       </button>
                   </div>
                   <div className = "col">
-                      <button className = "btn btn-danger"
+                      <button
+                      className = "btn btn-danger"
                       onClick={()=> deleteArticle(article)}>
-                        delete
+                        Delete
                       </button>
                   </div>
             </div>
