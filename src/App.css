@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 10;
+  padding: 10;
+  font-family: 'PT Sans', sans-serif;
+  justify-content: center;
+  flex: auto;
+}
+
