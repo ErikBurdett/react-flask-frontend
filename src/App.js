@@ -10,7 +10,7 @@ function App() {
   const [editedArticle, setEditedArticle] = useState(null)
 
   useEffect(()=>{
-    fetch('https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/get', {
+    fetch('https://flaskreact-native-test.herokuapp.com//get', {
       'method':'GET',
       headers: {
         'Content-Type': 'application/json'}
