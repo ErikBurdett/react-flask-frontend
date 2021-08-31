@@ -8,3 +8,4 @@ it('renders without crashing, create article available', () => {
   const createArticleElement = getByText("Create Article")
   expect(createArticleElement).toBeTruthy()
 })
+
