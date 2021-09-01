@@ -78,7 +78,7 @@ function App() {
       
       <br/>
       <br/>
-      <ArticleList articles ={articles} editArticle={editArticle} deleteArticle = {deleteArticle}/>
+      <ArticleList  articles ={articles} editArticle={editArticle} deleteArticle = {deleteArticle}/>
 
       {editedArticle ? <Form article = {editedArticle} updatedData={updatedData} insertedArticle = {insertedArticle}/> : null }
     </div>

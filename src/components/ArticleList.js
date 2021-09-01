@@ -12,7 +12,8 @@ function ArticleList(props) {
         .then(()=>props.deleteArticle(article))
     }
     return (
-        <div>
+        <div
+        >
         {props.articles && props.articles.map(article =>{
           return (
             <div

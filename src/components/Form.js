@@ -25,7 +25,7 @@ function Form(props) {
     }
 
     return (
-        <div>
+        <div test-dataid = "form">
             {props.article ? (
                 <div className = "mb-3">
                     <label htmlFor = "title" className = "form-label">
