@@ -10,7 +10,7 @@ beforeEach(()=>{
 
 });
 
-test("returns null when exception", () => {
+test("Succesfully GETs all Articles", () => {
     fetch.mockResponse(() => useEffect().then(res => ({ body: 'ok' })))});
 
 
