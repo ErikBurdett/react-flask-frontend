@@ -130,63 +130,10 @@ test("renders form when useEffect = true", ()=>{
   render(<Form article useEffect={true}/>)
 })
 
-//APIService Tests (next up)----------------
-// ----------------------------------------
-// jest.mock('../APIService');
-
-// test("InsertedArticle performs correct POST", ()=>{
-//     mockInsertedArticle.mockResolvedValueOnce({
-//         message: [
-//             {
-//                 title: 'Testing',
-//                 body: 'JSON.stringify(body)'
-//             }
-//         ]
-//     })
-//     const {getByText} = render(<Form/>, <App/>);
-//     const submitArticleButton = getByText(/submit/i)
-//     fireEvent.click(submitArticleButton)
-// })
-
-// =======================================
-
-
-
-
-
-
-
+//APIService Tests----------------
+// Located in APIService.tests.js
+// =============================================
 
 // previous tests===============================
-// test("Renders ArticleList", ()=> {
-//   render(<ArticleList article/>);
 
-// });
-
-// test("renders Form", ()=>{
-//   render(<Form article/>)
-
-// })
-// test("Renders Articles Correctly",()=>{
-//   const {getByTestId} = render(<ArticleList/>)
-//   expect(getByTestId('allArticles')).toBeTruthy()
-// });
-
-
-// test("renders Form Text Area", ()=>{
-//   const {getByTestId} = render(<Form article/>)
-//   expect(getByTestId('form')).toHavePlaceholderText("Please provide a description")
-// })
-
-// describe("Input Value", ()=>{
-//   it("updates on change", ()=>{
-//     const {queryByTestId} = render(<Form/>)
-
-//     const bodyInput = queryByTestId("textarea");
-
-//     fireEvent.change(bodyInput, {target: {value: "test"}})
-
-//     expect(bodyInput.value).toBe("test")
-//   })
-// });
 
