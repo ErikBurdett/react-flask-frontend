@@ -14,15 +14,17 @@ test('renders without crashing, create article, and forms', () => {
 
 
 
-test("Renders ArticleList", ()=> {
-  render(<ArticleList article/>);
 
-});
 
-test("renders Form", ()=>{
-  render(<Form article/>)
+// test("Renders ArticleList", ()=> {
+//   render(<ArticleList article/>);
 
-})
+// });
+
+// test("renders Form", ()=>{
+//   render(<Form article/>)
+
+// })
 // test("Renders Articles Correctly",()=>{
 //   const {getByTestId} = render(<ArticleList/>)
 //   expect(getByTestId('allArticles')).toBeTruthy()
