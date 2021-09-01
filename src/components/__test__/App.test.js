@@ -1,7 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
+import { render} from '@testing-library/react';
 import App from '../../App'
+import ArticleList from '../ArticleList';
 
 it('renders without crashing, create article available', () => {
   const {getByText} = render(<App />)
@@ -9,3 +9,7 @@ it('renders without crashing, create article available', () => {
   expect(createArticleElement).toBeTruthy()
 })
 
+test("Renders correct Article", ()=> {
+  render(<ArticleList/>);
+
+});
