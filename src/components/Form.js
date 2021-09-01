@@ -28,6 +28,7 @@ function Form(props) {
         <div>
             {props.article ? (
                 <div
+                test-dataid ="input"
                 className = "mb-3">
                     <label htmlFor = "title" className = "form-label">
                     Title</label>

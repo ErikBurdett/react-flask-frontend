@@ -14,7 +14,7 @@ import "@testing-library/jest-dom/extend-expect"
 //     title: "New Tests"
 
 //     }
-
+// Render Tests
 test("renders Form", ()=>{
     render(<Form article/>)
 })
@@ -39,10 +39,44 @@ test("renders form when useEffect = true", ()=>{
 })
 
 
+// test("Renders Form Buttons", ()=> {
+//     const {queryAllByRole} = render(<Form editArticle={true}/>)
+//     const createFormElement = queryAllByRole("button")
+//     expect(createFormElement).toBeTruthy()
+// });
+
+// // Input Field exists
+// test('renders the form with input fields on updateArticle = True', ()=>{
+//     render(<Form article updateArticle={true}/>)
+//     const input = screen.queryAllByTestId('input', {value:/title/i});
+//     // const deleteButton = screen.queryAllByRole('button', {name:/submit/i});
+
+//     expect(input).toBe(input)
+//     // expect(deleteButton).toBe(deleteButton)
+// })
+
+// API Tests
+// test("render Form on ", ()=>{
+//     const data={
+//         title:'1',
+//         body: '1'
+//     }
+
+//     const {getAllByTestId, rerender} = render(<Form articles={[{}]}/>)
+//     expect(getAllByTestId(/form/i)).toHaveLength(2)
+//     // ^^^ length = 2 for the two divs with articles
+//     console.log(getAllByTestId(/form/i))
+//     // renders test data correctly in the second return statement in ArticleList.js
+//     rerender(<ArticleList article={data}/>)
+//     expect(getAllByTestId(/form/i)).toHaveLength(1)
+
+
+// })
+
 
 
 // test("Renders Form Buttons", ()=> {
-//     const {queryAllByRole} = render(<Form insertedArticle={true}/>)
+//     const {queryAllByRole} = render(<Form editArticle={true}/>)
 //     const createFormElement = queryAllByRole("button")
 //     expect(createFormElement).toBeTruthy()
 // });
