@@ -1,5 +1,5 @@
 import React from 'react'
-import {render, fireEvent} from '@testing-library/react';
+import {render, screen, queryAllByRole, fireEvent} from '@testing-library/react';
 import App from '../../App'
 import Form from'../Form'
 import ArticleList from '../ArticleList';
@@ -13,6 +13,23 @@ test('renders without crashing, create article, and forms', () => {
 });
 
 
+test("Renders ArticleList", ()=> {
+  render(<ArticleList article/>)
+});
+
+test("renders when editArticle is true", ()=>{
+  render(<ArticleList editArticle={true} />)
+  const item = screen.queryAllByRole('button', {name:/update/i});
+
+  expect(item).toBe(item)
+  console.log(item.articles)
+  // expect(item).toBeInTheDocument();
+
+})
+
+test('renders the button on editArticle = false', ()=>{
+  render(<ArticleList editArticle={false}/>)
+})
 
 
 

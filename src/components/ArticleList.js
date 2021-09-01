@@ -29,6 +29,7 @@ function ArticleList(props) {
                   <div className = "col-md-1"
                   >
                       <button
+                      name = 'update'
                       className = "btn btn-primary"
                       onClick = {()=> editArticle(article)}
                       >
