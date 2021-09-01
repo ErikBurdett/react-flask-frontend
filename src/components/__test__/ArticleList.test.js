@@ -57,7 +57,7 @@ test("renders articles from API", ()=>{
     const {getAllByTestId, rerender} = render(<ArticleList articles={[{}]}/>)
     expect(getAllByTestId(/articles/i)).toHaveLength(2)
     // ^^^ length = 2 for the two divs with articles
-    console.log(getAllByTestId(/articles/i))
+    // console.log(getAllByTestId(/articles/i))
     // renders test data correctly in the second return statement in ArticleList.js
     rerender(<ArticleList article={data}/>)
     expect(getAllByTestId(/articles/i)).toHaveLength(1)

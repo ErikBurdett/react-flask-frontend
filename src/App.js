@@ -62,7 +62,7 @@ function App() {
     <div className="App">
       <div className ="row">
         <div className="col">
-        <h1>Flask and React</h1>
+        <h1 data-testid = "appTitle">Flask and React</h1>
           
         </div>
         <div className="col">

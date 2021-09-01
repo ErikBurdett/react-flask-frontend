@@ -10,12 +10,18 @@ import "@testing-library/jest-dom/extend-expect"
 
 // App Tests-------------------
 // ----------------------------------
+test("Renders Flask and React App Title", () =>{
+  const {queryAllByTestId} = render(<App/>)
+  const appTitle = queryAllByTestId("flaskandreact")
+  expect(appTitle).toBeTruthy()
+})
 test('renders without crashing, create article, and forms', () => {
   const {getByText, queryAllByPlaceholderText} = render(<App />)
   const createArticleElement = getByText("Create Article")
   expect(createArticleElement).toBeTruthy()
   expect(queryAllByPlaceholderText("Please Enter Title")).toBeTruthy()
 });
+
 
 
 
@@ -32,7 +38,7 @@ test("renders when editArticle is true", ()=>{
   const item = screen.queryAllByRole('button', {name:/update/i});
 
   expect(item).toBe(item)
-  console.log(item.articles)
+  // console.log(item.articles)
   // expect(item).toBeInTheDocument();
 
 })
@@ -86,7 +92,7 @@ test("renders articles from API", ()=>{
   const {getAllByTestId, rerender} = render(<ArticleList articles={[{}]}/>)
   expect(getAllByTestId(/articles/i)).toHaveLength(2)
   // ^^^ length = 2 for the two divs with articles
-  console.log(getAllByTestId(/articles/i))
+  // console.log(getAllByTestId(/articles/i))
   // renders test data correctly in the second return statement in ArticleList.js
   rerender(<ArticleList article={data}/>)
   expect(getAllByTestId(/articles/i)).toHaveLength(1)
