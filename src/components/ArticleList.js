@@ -13,11 +13,12 @@ function ArticleList(props) {
     }
     return (
         <div
+        data-testid = "articles"
         >
         {props.articles && props.articles.map(article =>{
           return (
             <div
-            
+            data-testid = "articles"
             key ={article.id}>
               <h2>Test - {article.title}</h2>
               <p
