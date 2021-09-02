@@ -6,15 +6,18 @@ import ArticleList from '../ArticleList';
 import APIService from '../APIService';
 import {InsertedArticle as mockInsertedArticle} from '../APIService';
 import "@testing-library/jest-dom/extend-expect"
+import fetchMock from "jest-fetch-mock";
 
 
 // App Tests-------------------
 // ----------------------------------
+// App is working
 test("Renders Flask and React App Title", () =>{
   const {queryAllByTestId} = render(<App/>)
   const appTitle = queryAllByTestId("flaskandreact")
   expect(appTitle).toBeTruthy()
 })
+// App renders Create Articles button and Forms
 test('renders without crashing, create article, and forms', () => {
   const {getByText, queryAllByPlaceholderText} = render(<App />)
   const createArticleElement = getByText("Create Article")
@@ -22,13 +25,11 @@ test('renders without crashing, create article, and forms', () => {
   expect(queryAllByPlaceholderText("Please Enter Title")).toBeTruthy()
 });
 
-
-
-
 // ==========================================================
 
 // ArticleList Tests-------------
 // ---------------------------------------
+// Renders all articles
 test("Renders ArticleList", ()=> {
   render(<ArticleList article/>)
 });
@@ -42,7 +43,7 @@ test("renders when editArticle is true", ()=>{
   // expect(item).toBeInTheDocument();
 
 })
-
+// Renders buttons
 test('renders the button on editArticle = false', ()=>{
   render(<ArticleList editArticle={false}/>)
 })
@@ -62,7 +63,7 @@ test("renders buttons when editArticle is true", ()=>{
   // expect(item).toBeInTheDocument();
 
 })
-
+// Renders correct buttons
 test('unrenders the button on editArticle = false', ()=>{
   render(<ArticleList editArticle={false}/>)
   const updateButton = screen.queryAllByRole('button', {name:/update/i});
@@ -72,7 +73,6 @@ test('unrenders the button on editArticle = false', ()=>{
   expect(deleteButton).toBe(deleteButton)
 })
 
-// still need to build out this - set to pass at the moment
 test('delete Button works', ()=>{
   render(<ArticleList editArticle={false}/>)
   const updateButton = screen.queryAllByRole('button', {name:/update/i});
@@ -99,14 +99,24 @@ test("renders articles from API", ()=>{
 
 
 })
-
-
-
 // ==========================================================
 
+// -------------------------
 // Form Tests--------------------------
 // -------------------------------------------
 // Render Tests
+test("Renders Input for Forms", () =>{
+  const {queryAllByTestId} = render(<Form article insertedArticle={true}/>)
+  const formRenders = queryAllByTestId("input")
+  expect(formRenders).toBeTruthy()
+})
+
+test("Renders textarea for Forms", () =>{
+  const {queryAllByTestId} = render(<Form article insertedArticle={true}/>)
+  const formRenders = queryAllByTestId("form1")
+  expect(formRenders).toBeTruthy()
+})
+
 test("renders Form", ()=>{
   render(<Form article/>)
 })
@@ -131,9 +141,35 @@ test("renders form when useEffect = true", ()=>{
 })
 
 //APIService Tests----------------
-// Located in APIService.tests.js
 // =============================================
+fetchMock.enableMocks();
 
-// previous tests===============================
+beforeEach(()=>{
+    fetch.resetMocks();
+
+});
+
+// GET - App specific get function for rendering All Articles on Page
+
+test("Succesfully GETs all Articles", () => {
+    fetch.mockResponse(() => useEffect().then(res => ({ body: 'ok' })))
+  });
+
+  // POST test
+test("Succesfully POSTs InsertedArticle", () => {
+    fetch.mockResponseOnce(()=> insertedArticle().then(res =>({body:{title: 'testing post test', body:'testing post test' }})))
+});
+// PUT /Update test
+test("Succesfully PUTSs InsertedArticle", () => {
+    fetch.mockResponseOnce(()=> upatedArticle().then(res =>({body:{title: 'testing post test', body:'testing post test' }})))
+});
+// DELETE
+test("Succesfully Deletes article", () => {
+    fetch.mockResponseOnce(()=> deleteArticle().then(res =>({body:'ok' })))
+});
+
+
+
+// Build Tests HERE ===============================
 
 

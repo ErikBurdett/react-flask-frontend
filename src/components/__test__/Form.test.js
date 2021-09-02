@@ -7,6 +7,18 @@ import ArticleList from'../ArticleList'
 import "@testing-library/jest-dom/extend-expect"
 
 // Render Tests
+test("Renders Input for Forms", () =>{
+    const {queryAllByTestId} = render(<Form article insertedArticle={true}/>)
+    const formRenders = queryAllByTestId("input")
+    expect(formRenders).toBeTruthy()
+  })
+
+  test("Renders textarea for Forms", () =>{
+    const {queryAllByTestId} = render(<Form article insertedArticle={true}/>)
+    const formRenders = queryAllByTestId("form1")
+    expect(formRenders).toBeTruthy()
+  })
+
 test("renders Form", ()=>{
     render(<Form article/>)
 })
@@ -30,4 +42,5 @@ test("renders form when useEffect = true", ()=>{
     render(<Form article useEffect={true}/>)
 })
 
-// Form Validation Tests (Next)
+
+// Build Tests HERE ===============================

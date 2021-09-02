@@ -25,7 +25,7 @@ function Form(props) {
     }
 
     return (
-        <div>
+        <div >
             {props.article ? (
                 <div
                 test-dataid ="input"
@@ -41,6 +41,7 @@ function Form(props) {
                     <label htmlFor = "body" className = "form-label">
                     Article</label>
                     <textarea
+                    type="textarea"
                     test-dataid = "form1"
                     row = "5"
                     className = "form-control"
