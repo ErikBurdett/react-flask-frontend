@@ -56,6 +56,7 @@ function Form(props) {
                             onClick = {updateArticle}>Update</button>
                             :
                             <button
+                            data-testid="form-submit"
                             onClick = {insertedArticle} className = "btn btn-success mt-3">Submit</button>
                         }
 

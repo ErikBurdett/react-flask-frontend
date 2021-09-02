@@ -104,7 +104,8 @@ test("renders articles from API", ()=>{
 // -------------------------
 // Form Tests--------------------------
 // -------------------------------------------
-// Render Tests
+
+// Renders input field for Forms
 test("Renders Input for Forms", () =>{
   const {queryAllByTestId} = render(<Form article insertedArticle={true}/>)
   const formRenders = queryAllByTestId("input")
@@ -116,7 +117,7 @@ test("Renders textarea for Forms", () =>{
   const formRenders = queryAllByTestId("form1")
   expect(formRenders).toBeTruthy()
 })
-
+// Render Tests
 test("renders Form", ()=>{
   render(<Form article/>)
 })
@@ -138,6 +139,12 @@ test("renders form when updateArticle = false", ()=>{
 
 test("renders form when useEffect = true", ()=>{
   render(<Form article useEffect={true}/>)
+})
+// Form can be submited
+test("form should have onSubmit function tied to onClick", ()=>{
+  const{queryAllByTestId} = render(<Form article insertedArticle={true}/>)
+  const formSubmits = queryAllByTestId("form-submit")
+  expect(formSubmits).toBeTruthy()
 })
 
 //APIService Tests----------------
