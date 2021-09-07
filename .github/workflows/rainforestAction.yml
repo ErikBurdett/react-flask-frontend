@@ -1,0 +1,24 @@
+# requires a docker env
+
+name: 'Rainforest QA: RFML Runner'
+
+on:
+  push:
+    branches: [ main, addingRainforestCLI ]
+  pull_request:
+    branches: [ main, addingRainforestCLI ]
+
+description: 'Run RFML tests from your repo'
+inputs:
+  rainforest_api_key: a087333e610c8d857b3fb4027660a81b
+    description: 'Rainforest API key'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'docker://gcr.io/rf-public-images/rainforest-cli:latest'
+  args:
+    - 'run'
+    - '--fail-fast'
+    - '-f'
+    - 'spec/rainforest'
