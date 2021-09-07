@@ -1,0 +1,12 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - .:/react-flask-test
+    ports:
+      - 3000:3000
+    image: app:react
+    container_name: react_container
+    command: npm start
