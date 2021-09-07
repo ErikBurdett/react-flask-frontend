@@ -25,9 +25,11 @@ function Form(props) {
     }
 
     return (
-        <div test-dataid = "form">
+        <div >
             {props.article ? (
-                <div className = "mb-3">
+                <div
+                test-dataid ="input"
+                className = "mb-3">
                     <label htmlFor = "title" className = "form-label">
                     Title</label>
                     <input type="text" 
@@ -39,6 +41,8 @@ function Form(props) {
                     <label htmlFor = "body" className = "form-label">
                     Article</label>
                     <textarea
+                    type="textarea"
+                    test-dataid = "form1"
                     row = "5"
                     className = "form-control"
                     value = {body}
@@ -52,6 +56,7 @@ function Form(props) {
                             onClick = {updateArticle}>Update</button>
                             :
                             <button
+                            data-testid="form-submit"
                             onClick = {insertedArticle} className = "btn btn-success mt-3">Submit</button>
                         }
 
